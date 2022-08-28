@@ -32,6 +32,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
         document.querySelector('#beer-description').innerText = form.description.value;
         form.reset();
     });
- 
+    document.querySelector('#review-form').addEventListener('submit', e=>{
+        e.preventDefault();
+        let form = e.target;
+        document.querySelector('#review-list').innerText += `<li>${form.review.value}</li>`;
+        form.reset();
+    })
 })
 
