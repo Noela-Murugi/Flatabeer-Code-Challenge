@@ -26,6 +26,12 @@ function getBeerDetails(beerId){
 document.addEventListener('DOMContentLoaded', ()=>{
     getBeerNameById();
     getBeerDetails(1);
-  
+    document.querySelector('#description-form').addEventListener('submit', (e)=>{
+        e.preventDefault();
+        let form = e.target;
+        document.querySelector('#beer-description').innerText = form.description.value;
+        form.reset();
+    });
+ 
 })
 
